@@ -8,6 +8,7 @@ object MainForm: TMainForm
   ClientWidth = 724
   Menu = MainMenu
   LCLVersion = '4.8.0.0'
+  OnCreate = FormCreate
   object EditorRichMemo: TRichMemo
     Left = 0
     Height = 435
@@ -15,6 +16,7 @@ object MainForm: TMainForm
     Width = 724
     Align = alClient
     HideSelection = False
+    OnChange = EditorRichMemoChange
     TabOrder = 0
     ZoomFactor = 1
   end
@@ -58,7 +60,7 @@ object MainForm: TMainForm
       ImageIndex = 9
     end
   end
-  object StatusBar1: TStatusBar
+  object StatusBar: TStatusBar
     Left = 0
     Height = 21
     Top = 459
