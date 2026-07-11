@@ -88,7 +88,7 @@ begin
 
     if SaveDialog.Execute then
         begin
-            rtfFile := TFileStream.Create(OpenDialog.FileName, fmCreate or fmOpenReadWrite);
+            rtfFile := TFileStream.Create(SaveDialog.FileName, fmCreate or fmOpenReadWrite);
             SaveToFile;
         end;
 end;
