@@ -20,6 +20,9 @@ type
         MainMenu: TMainMenu;
         FileMenuItem: TMenuItem;
         AboutMenuItem: TMenuItem;
+        SaveMenuItem: TMenuItem;
+        OpenMenuItem: TMenuItem;
+        NewMenuItem: TMenuItem;
         OpenDialog: TOpenDialog;
         SaveDialog: TSaveDialog;
         StatusBar: TStatusBar;
@@ -28,20 +31,26 @@ type
         OpenToolButton: TToolButton;
         SaveToolButton: TToolButton;
         PrintToolButton: TToolButton;
-        procedure EditorRichMemoChange(Sender: TObject);
+
         procedure FormCreate(Sender: TObject);
-        procedure OpenToolButtonClick(Sender: TObject);
-        procedure SaveToolButtonClick(Sender: TObject);
+
+        { Generic EventHandler to be plugged with toolbar and menu }
+
+        procedure DoNew(Sender: TObject);
+        procedure DoOpen(Sender: TObject);
+        procedure DoSave(Sender: TObject);
+        procedure OnRichMemoChanged(Sender: TObject);
 
         private
-            procedure OpenFile(filename: String);
-            procedure SaveToFile;
+
+            procedure UpdateWindowCaption;
             procedure UpdateStatusBar;
 
     end;
 
 var
     editorStatus: TEditorStatus;
+    fileName: String;
     rtfFile: TFileStream;
     MainForm: TMainForm;
 
@@ -49,21 +58,75 @@ implementation
 
 {$R *.lfm}
 
-{ TMainForm }
+{ ================================================================== TMainForm }
 
-procedure TMainForm.OpenFile(filename: String);
+{ Init ----------------------------------------------------------------------- }
+
+procedure TMainForm.FormCreate(Sender: TObject);
 begin
-    EditorRichMemo.LoadRichText(rtfFile);
-    editorStatus := esLoaded;
+    fileName := 'Untitled file';
+    editorStatus := esNew;
+    UpdateWindowCaption;
     UpdateStatusBar;
 end;
 
-procedure TMainForm.SaveToFile;
+{ Events Handlers ------------------------------------------------------------ }
+
+procedure TMainForm.DoNew(Sender: TObject);
 begin
-    rtfFile.Position := 0; { Rewind stream (if not, it will append) }
-    EditorRichMemo.SaveRichText(rtfFile);
-    editorStatus := esSaved;
+
+end;
+
+procedure TMainForm.DoOpen(Sender: TObject);
+begin
+    if OpenDialog.Execute then
+        begin
+            rtfFile := TFileStream.Create(OpenDialog.FileName, fmOpenReadWrite);
+            fileName := OpenDialog.FileName;
+            EditorRichMemo.LoadRichText(rtfFile);
+            editorStatus := esLoaded;
+            UpdateWindowCaption;
+            UpdateStatusBar;
+        end;
+end;
+
+procedure TMainForm.DoSave(Sender: TObject);
+var
+    newFileName: String;
+begin
+    if rtfFile = nil then
+        if SaveDialog.Execute then
+        begin
+            newFileName := SaveDialog.FileName;
+
+            { Add RTF extension if not already done }
+            if not newFileName.EndsWith('.rtf') then
+                newFileName := newFileName + '.rtf';
+
+            rtfFile := TFileStream.Create(newFileName, fmCreate or fmOpenReadWrite);
+            fileName := newFileName;
+        end;
+
+    if rtfFile <> nil then
+    begin
+        rtfFile.Position := 0; { Rewind stream (if not, it will append) }
+        EditorRichMemo.SaveRichText(rtfFile);
+        editorStatus := esSaved;
+        UpdateStatusBar;
+    end;
+end;
+
+procedure TMainForm.OnRichMemoChanged(Sender: TObject);
+begin
+    editorStatus := esModified;
     UpdateStatusBar;
+end;
+
+{ Private members ------------------------------------------------------------ }
+
+procedure TMainForm.UpdateWindowCaption;
+begin
+    MainForm.Caption := 'Editor - ' + fileName;
 end;
 
 procedure TMainForm.UpdateStatusBar;
@@ -76,42 +139,6 @@ begin
         StatusBar.Panels[0].Text := 'Modified'
     else
         StatusBar.Panels[0].Text := 'Saved';
-end;
-
-procedure TMainForm.SaveToolButtonClick(Sender: TObject);
-begin
-    if rtfFile <> nil then
-    begin
-        SaveToFile;
-        Exit;
-    end;
-
-    if SaveDialog.Execute then
-        begin
-            rtfFile := TFileStream.Create(SaveDialog.FileName, fmCreate or fmOpenReadWrite);
-            SaveToFile;
-        end;
-end;
-
-procedure TMainForm.OpenToolButtonClick(Sender: TObject);
-begin
-    if OpenDialog.Execute then
-        begin
-            rtfFile := TFileStream.Create(OpenDialog.FileName, fmOpenReadWrite);
-            OpenFile(OpenDialog.FileName);
-        end;
-end;
-
-procedure TMainForm.EditorRichMemoChange(Sender: TObject);
-begin
-    editorStatus := esModified;
-    UpdateStatusBar;
-end;
-
-procedure TMainForm.FormCreate(Sender: TObject);
-begin
-    editorStatus := esNew;
-    UpdateStatusBar;
 end;
 
 end.

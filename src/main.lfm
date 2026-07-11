@@ -16,7 +16,7 @@ object MainForm: TMainForm
     Width = 724
     Align = alClient
     HideSelection = False
-    OnChange = EditorRichMemoChange
+    OnChange = OnRichMemoChanged
     TabOrder = 0
     ZoomFactor = 1
   end
@@ -33,25 +33,27 @@ object MainForm: TMainForm
     Images = IconImageList
     ParentShowHint = False
     TabOrder = 1
+    OnClick = DoOpen
     object NewToolButton: TToolButton
       Left = 1
       Top = 0
       Caption = 'New'
       ImageIndex = 1
+      OnClick = DoNew
     end
     object OpenToolButton: TToolButton
       Left = 25
       Top = 0
       Caption = 'OpenToolButton'
       ImageIndex = 2
-      OnClick = OpenToolButtonClick
+      OnClick = DoOpen
     end
     object SaveToolButton: TToolButton
       Left = 49
       Top = 0
       Caption = 'SaveToolButton'
       ImageIndex = 3
-      OnClick = SaveToolButtonClick
+      OnClick = DoSave
     end
     object PrintToolButton: TToolButton
       Left = 73
@@ -76,7 +78,19 @@ object MainForm: TMainForm
     Left = 440
     Top = 56
     object FileMenuItem: TMenuItem
-      Caption = 'File'
+      Caption = '&File'
+      object NewMenuItem: TMenuItem
+        Caption = '&New'
+        OnClick = DoNew
+      end
+      object OpenMenuItem: TMenuItem
+        Caption = '&Open'
+        OnClick = DoOpen
+      end
+      object SaveMenuItem: TMenuItem
+        Caption = '&Save'
+        OnClick = DoSave
+      end
     end
     object AboutMenuItem: TMenuItem
       Caption = '?'
