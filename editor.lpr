@@ -10,8 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms,
-  main;
+  Forms, printer4lazarus,
+  main, about;
 
 {$R *.res}
 
@@ -23,6 +23,7 @@ begin
   {$POP}
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
 
