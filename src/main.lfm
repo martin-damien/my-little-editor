@@ -17,6 +17,7 @@ object MainForm: TMainForm
     Align = alClient
     HideSelection = False
     OnChange = OnRichMemoChanged
+    OnClick = OnRichMemoClicked
     OnKeyDown = OnRichMemoKeyDown
     OnMouseDown = OnRichMemoClicked
     ScrollBars = ssAutoBoth

@@ -36,18 +36,20 @@ type
         ItalicToolButton: TToolButton;
         UnderlineToolButton: TToolButton;
 
-        procedure BoldToolButtonClick(Sender: TObject);
-        procedure OnRichMemoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
         procedure FormCreate(Sender: TObject);
 
-        { Generic EventHandler to be plugged with toolbar and menu }
+        { Generic EventHandler to be plugged with toolbar, menu, editor, … }
 
         procedure DoNew(Sender: TObject);
         procedure DoOpen(Sender: TObject);
         procedure DoSave(Sender: TObject);
-        procedure ItalicToolButtonClick(Sender: TObject);
+
         procedure OnRichMemoChanged(Sender: TObject);
-        procedure OnRichMemoClicked(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+        procedure OnRichMemoClicked(Sender: TObject);
+        procedure OnRichMemoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+
+        procedure BoldToolButtonClick(Sender: TObject);
+        procedure ItalicToolButtonClick(Sender: TObject);
         procedure UnderlineToolButtonClick(Sender: TObject);
 
         private
@@ -80,20 +82,6 @@ begin
     editorStatus := esNew;
     UpdateWindowCaption;
     UpdateStatusBar;
-end;
-
-procedure TMainForm.BoldToolButtonClick(Sender: TObject);
-begin
-    SwitchSelectionTextAttribute(fsBold);
-end;
-
-procedure TMainForm.OnRichMemoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-begin
-    if key in [VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN] then
-    begin
-        EditorRichMemo.GetTextAttributes(EditorRichMemo.SelStart, selectionFontFormat);
-        UpdateToolBar;
-    end;
 end;
 
 { Events Handlers ------------------------------------------------------------ }
@@ -138,13 +126,24 @@ begin
         rtfFile.Position := 0; { Rewind stream (if not, it will append) }
         EditorRichMemo.SaveRichText(rtfFile);
         editorStatus := esSaved;
+        UpdateWindowCaption;
         UpdateStatusBar;
     end;
+end;
+
+procedure TMainForm.BoldToolButtonClick(Sender: TObject);
+begin
+    SwitchSelectionTextAttribute(fsBold);
 end;
 
 procedure TMainForm.ItalicToolButtonClick(Sender: TObject);
 begin
     SwitchSelectionTextAttribute(fsItalic);
+end;
+
+procedure TMainForm.UnderlineToolButtonClick(Sender: TObject);
+begin
+    SwitchSelectionTextAttribute(fsUnderline);
 end;
 
 procedure TMainForm.OnRichMemoChanged(Sender: TObject);
@@ -153,15 +152,19 @@ begin
     UpdateStatusBar;
 end;
 
-procedure TMainForm.OnRichMemoClicked(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TMainForm.OnRichMemoClicked(Sender: TObject);
 begin
     EditorRichMemo.GetTextAttributes(EditorRichMemo.SelStart, selectionFontFormat);
     UpdateToolBar;
 end;
 
-procedure TMainForm.UnderlineToolButtonClick(Sender: TObject);
+procedure TMainForm.OnRichMemoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
-    SwitchSelectionTextAttribute(fsUnderline);
+    if key in [VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN] then
+    begin
+        EditorRichMemo.GetTextAttributes(EditorRichMemo.SelStart, selectionFontFormat);
+        UpdateToolBar;
+    end;
 end;
 
 { Private members ------------------------------------------------------------ }
