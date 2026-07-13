@@ -1,0 +1,135 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: taboutform.bitbtn1.caption
+msgid "See on GitHub"
+msgstr ""
+
+#: taboutform.caption
+msgctxt "taboutform.caption"
+msgid "About"
+msgstr ""
+
+#: taboutform.label1.caption
+msgctxt "taboutform.label1.caption"
+msgid "MyLittleEditor"
+msgstr ""
+
+#: taboutform.label2.caption
+msgid "Fugue icons set"
+msgstr ""
+
+#: taboutform.label3.caption
+msgid "Yusuke Kamiyamane"
+msgstr ""
+
+#: taboutform.label4.caption
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: taboutform.label5.caption
+msgid "RichMemo"
+msgstr ""
+
+#: taboutform.label6.caption
+msgid "Dmitry Boyarintsev"
+msgstr ""
+
+#: taboutform.label7.caption
+msgid "LGPL v2"
+msgstr ""
+
+#: taboutform.tabsheet1.caption
+msgctxt "taboutform.tabsheet1.caption"
+msgid "MyLittleEditor"
+msgstr ""
+
+#: taboutform.tabsheet2.caption
+msgid "Credits"
+msgstr ""
+
+#: taboutform.versionlabel.caption
+msgid "version"
+msgstr ""
+
+#: tmainform.aboutmenuitem.caption
+msgctxt "tmainform.aboutmenuitem.caption"
+msgid "About"
+msgstr ""
+
+#: tmainform.boldmenuitem.caption
+msgid "Bold"
+msgstr ""
+
+#: tmainform.boldtoolbutton.caption
+msgid "BoldToolButton"
+msgstr ""
+
+#: tmainform.caption
+msgid "MainForm"
+msgstr ""
+
+#: tmainform.editmenuitem.caption
+msgid "&Edit"
+msgstr ""
+
+#: tmainform.filemenuitem.caption
+msgid "&File"
+msgstr ""
+
+#: tmainform.helpmenuitem.caption
+msgid "?"
+msgstr ""
+
+#: tmainform.italicmenuitem.caption
+msgid "Italic"
+msgstr ""
+
+#: tmainform.italictoolbutton.caption
+msgid "ItalicToolButton"
+msgstr ""
+
+#: tmainform.maintoolbar.caption
+msgid "MainToolBar"
+msgstr ""
+
+#: tmainform.menuitem1.caption
+msgid "Underline"
+msgstr ""
+
+#: tmainform.newmenuitem.caption
+msgid "&New"
+msgstr ""
+
+#: tmainform.newtoolbutton.caption
+msgid "New"
+msgstr ""
+
+#: tmainform.openmenuitem.caption
+msgid "&Open"
+msgstr ""
+
+#: tmainform.opentoolbutton.caption
+msgid "OpenToolButton"
+msgstr ""
+
+#: tmainform.savemenuitem.caption
+msgid "&Save"
+msgstr ""
+
+#: tmainform.savetoolbutton.caption
+msgid "SaveToolButton"
+msgstr ""
+
+#: tmainform.separatortoolbutton1.caption
+msgid "SeparatorToolButton1"
+msgstr ""
+
+#: tmainform.statusbar.panels[0].text
+msgid "Changed"
+msgstr ""
+
+#: tmainform.underlinetoolbutton.caption
+msgid "UnderlineToolButton"
+msgstr ""
+

@@ -1,7 +1,7 @@
 {
-  Copyright (c) 2026 MARTIN Damien
+    Copyright (c) 2026 MARTIN Damien
 
-  SPDX-License-Identifier: MIT
+    SPDX-License-Identifier: MIT
 }
 
 program editor;

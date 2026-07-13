@@ -1,7 +1,7 @@
 {
-  Copyright (c) 2026 MARTIN Damien
+    Copyright (c) 2026 MARTIN Damien
 
-  SPDX-License-Identifier: MIT
+    SPDX-License-Identifier: MIT
 }
 
 unit about;
@@ -12,7 +12,7 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, LCLIntf,
-    Buttons, ComCtrls;
+    Buttons, ComCtrls, LCLTranslator, DefaultTranslator;
 
 const
     APP_VERSION = '0.1.0 dev';

@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: taboutform.bitbtn1.caption
+msgid "See on GitHub"
+msgstr "Voir sur GitHub"
+
+#: taboutform.caption
+msgctxt "taboutform.caption"
+msgid "About"
+msgstr "À propos"
+
+#: taboutform.label1.caption
+msgctxt "taboutform.label1.caption"
+msgid "MyLittleEditor"
+msgstr ""
+
+#: taboutform.label2.caption
+msgid "Fugue icons set"
+msgstr "Jeu d’icônes Fugue"
+
+#: taboutform.label3.caption
+msgid "Yusuke Kamiyamane"
+msgstr ""
+
+#: taboutform.label4.caption
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: taboutform.label5.caption
+msgid "RichMemo"
+msgstr ""
+
+#: taboutform.label6.caption
+msgid "Dmitry Boyarintsev"
+msgstr ""
+
+#: taboutform.label7.caption
+msgid "LGPL v2"
+msgstr ""
+
+#: taboutform.tabsheet1.caption
+msgctxt "taboutform.tabsheet1.caption"
+msgid "MyLittleEditor"
+msgstr ""
+
+#: taboutform.tabsheet2.caption
+msgid "Credits"
+msgstr "Crédits"
+
+#: taboutform.versionlabel.caption
+msgid "version"
+msgstr ""
+
+#: tmainform.aboutmenuitem.caption
+msgctxt "tmainform.aboutmenuitem.caption"
+msgid "About"
+msgstr "À propos"
+
+#: tmainform.boldmenuitem.caption
+msgid "Bold"
+msgstr "Gras"
+
+#: tmainform.boldtoolbutton.caption
+msgid "BoldToolButton"
+msgstr ""
+
+#: tmainform.caption
+msgid "MainForm"
+msgstr ""
+
+#: tmainform.editmenuitem.caption
+msgid "&Edit"
+msgstr "&Modifier"
+
+#: tmainform.filemenuitem.caption
+msgid "&File"
+msgstr "&Fichier"
+
+#: tmainform.helpmenuitem.caption
+msgid "?"
+msgstr ""
+
+#: tmainform.italicmenuitem.caption
+msgid "Italic"
+msgstr "Italique"
+
+#: tmainform.italictoolbutton.caption
+msgid "ItalicToolButton"
+msgstr ""
+
+#: tmainform.maintoolbar.caption
+msgid "MainToolBar"
+msgstr ""
+
+#: tmainform.menuitem1.caption
+msgid "Underline"
+msgstr "Souligné"
+
+#: tmainform.newmenuitem.caption
+msgid "&New"
+msgstr "&Nouveau"
+
+#: tmainform.newtoolbutton.caption
+msgid "New"
+msgstr "Nouveau"
+
+#: tmainform.openmenuitem.caption
+msgid "&Open"
+msgstr "&Ouvrir"
+
+#: tmainform.opentoolbutton.caption
+msgid "OpenToolButton"
+msgstr ""
+
+#: tmainform.savemenuitem.caption
+msgid "&Save"
+msgstr "&Sauvegarder"
+
+#: tmainform.savetoolbutton.caption
+msgid "SaveToolButton"
+msgstr ""
+
+#: tmainform.separatortoolbutton1.caption
+msgid "SeparatorToolButton1"
+msgstr ""
+
+#: tmainform.statusbar.panels[0].text
+msgid "Changed"
+msgstr "Modifié"
+
+#: tmainform.underlinetoolbutton.caption
+msgid "UnderlineToolButton"
+msgstr ""

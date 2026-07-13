@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":4691652,"name":"taboutform.caption","sourcebytes":[65,98,111,117,116],"value":"About"},
+{"hash":126601986,"name":"taboutform.tabsheet1.caption","sourcebytes":[77,121,76,105,116,116,108,101,69,100,105,116,111,114],"value":"MyLittleEditor"},
+{"hash":126601986,"name":"taboutform.label1.caption","sourcebytes":[77,121,76,105,116,116,108,101,69,100,105,116,111,114],"value":"MyLittleEditor"},
+{"hash":214540334,"name":"taboutform.versionlabel.caption","sourcebytes":[118,101,114,115,105,111,110],"value":"version"},
+{"hash":225966562,"name":"taboutform.bitbtn1.caption","sourcebytes":[83,101,101,32,111,110,32,71,105,116,72,117,98],"value":"See on GitHub"},
+{"hash":176926963,"name":"taboutform.tabsheet2.caption","sourcebytes":[67,114,101,100,105,116,115],"value":"Credits"},
+{"hash":216161268,"name":"taboutform.label2.caption","sourcebytes":[70,117,103,117,101,32,105,99,111,110,115,32,115,101,116],"value":"Fugue icons set"},
+{"hash":31713605,"name":"taboutform.label3.caption","sourcebytes":[89,117,115,117,107,101,32,75,97,109,105,121,97,109,97,110,101],"value":"Yusuke Kamiyamane"},
+{"hash":182662981,"name":"taboutform.label4.caption","sourcebytes":[67,114,101,97,116,105,118,101,32,67,111,109,109,111,110,115,32,65,116,116,114,105,98,117,116,105,111,110,32,51,46,48,32,76,105,99,101,110,115,101],"value":"Creative Commons Attribution 3.0 License"},
+{"hash":261963711,"name":"taboutform.label5.caption","sourcebytes":[82,105,99,104,77,101,109,111],"value":"RichMemo"},
+{"hash":119070166,"name":"taboutform.label6.caption","sourcebytes":[68,109,105,116,114,121,32,66,111,121,97,114,105,110,116,115,101,118],"value":"Dmitry Boyarintsev"},
+{"hash":12904386,"name":"taboutform.label7.caption","sourcebytes":[76,71,80,76,32,118,50],"value":"LGPL v2"}
+]}
