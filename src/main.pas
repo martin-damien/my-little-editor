@@ -73,6 +73,13 @@ type
 
     end;
 
+resourcestring
+    UntitledDocument = 'Untitled file';
+    StatusNew = 'New';
+    StatusModified = 'Modified';
+    StatusLoaded = 'Loaded';
+    StatusSaved = 'Saved';
+
 var
     editorStatus: TEditorStatus;
     fileName: String;
@@ -90,7 +97,7 @@ implementation
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
-    fileName := 'Untitled file';
+    fileName := UntitledDocument;
     editorStatus := esNew;
     UpdateWindowCaption;
     UpdateStatusBar;
@@ -211,13 +218,13 @@ end;
 procedure TMainForm.UpdateStatusBar;
 begin
     if editorStatus = esNew then
-        StatusBar.Panels[0].Text := 'New'
+        StatusBar.Panels[0].Text := StatusNew
     else if editorStatus = esLoaded then
-        StatusBar.Panels[0].Text := 'Loaded'
+        StatusBar.Panels[0].Text := StatusLoaded
     else if editorStatus = esModified then
-        StatusBar.Panels[0].Text := 'Modified'
+        StatusBar.Panels[0].Text := StatusModified
     else
-        StatusBar.Panels[0].Text := 'Saved';
+        StatusBar.Panels[0].Text := StatusSaved;
 end;
 
 procedure TMainForm.UpdateToolBar;

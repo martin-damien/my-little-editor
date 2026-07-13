@@ -25,24 +25,24 @@ type
     { TAboutForm }
 
     TAboutForm = class(TForm)
-        BitBtn1: TBitBtn;
-        BitBtn2: TBitBtn;
-        BitBtn3: TBitBtn;
+        GitHubBitBtn: TBitBtn;
+        IconSetWebBitBtn: TBitBtn;
+        EditorWebBitBtn: TBitBtn;
         Image1: TImage;
-        Label1: TLabel;
-        Label2: TLabel;
-        Label3: TLabel;
-        Label4: TLabel;
-        Label5: TLabel;
-        Label6: TLabel;
-        Label7: TLabel;
-        PageControl1: TPageControl;
-        TabSheet1: TTabSheet;
-        TabSheet2: TTabSheet;
+        ApplicationNameLabel: TLabel;
+        IconSetNameLabel: TLabel;
+        IconSetAuthorLabel: TLabel;
+        IconSetLicenseLabel: TLabel;
+        EditorNameLabel: TLabel;
+        EditorAuthorLabel: TLabel;
+        EditorLicenseLabel: TLabel;
+        AboutPageControl: TPageControl;
+        MleTabSheet: TTabSheet;
+        CreditsTabSheet: TTabSheet;
         VersionLabel: TLabel;
-        procedure BitBtn1Click(Sender: TObject);
-        procedure BitBtn2Click(Sender: TObject);
-        procedure BitBtn3Click(Sender: TObject);
+        procedure GitHubBitBtnClick(Sender: TObject);
+        procedure IconSetWebBitBtnClick(Sender: TObject);
+        procedure EditorWebBitBtnClick(Sender: TObject);
         procedure FormCreate(Sender: TObject);
     private
 
@@ -64,17 +64,17 @@ begin
     VersionLabel.Caption := 'Version ' + APP_VERSION;
 end;
 
-procedure TAboutForm.BitBtn1Click(Sender: TObject);
+procedure TAboutForm.GitHubBitBtnClick(Sender: TObject);
 begin
     OpenUrl(APP_REPOSITORY_URL);
 end;
 
-procedure TAboutForm.BitBtn2Click(Sender: TObject);
+procedure TAboutForm.IconSetWebBitBtnClick(Sender: TObject);
 begin
     OpenUrl(ICONS_WEBSITE_URL);
 end;
 
-procedure TAboutForm.BitBtn3Click(Sender: TObject);
+procedure TAboutForm.EditorWebBitBtnClick(Sender: TObject);
 begin
     OpenUrl(RICHMEMO_REPOSITORY_URL);
 end;

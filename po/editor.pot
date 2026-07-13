@@ -1,8 +1,30 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: taboutform.bitbtn1.caption
-msgid "See on GitHub"
+#: main.statusloaded
+msgid "Loaded"
+msgstr ""
+
+#: main.statusmodified
+msgid "Modified"
+msgstr ""
+
+#: main.statusnew
+msgctxt "main.statusnew"
+msgid "New"
+msgstr ""
+
+#: main.statussaved
+msgid "Saved"
+msgstr ""
+
+#: main.untitleddocument
+msgid "Untitled file"
+msgstr ""
+
+#: taboutform.applicationnamelabel.caption
+msgctxt "taboutform.applicationnamelabel.caption"
+msgid "MyLittleEditor"
 msgstr ""
 
 #: taboutform.caption
@@ -10,42 +32,49 @@ msgctxt "taboutform.caption"
 msgid "About"
 msgstr ""
 
-#: taboutform.label1.caption
-msgctxt "taboutform.label1.caption"
-msgid "MyLittleEditor"
+#: taboutform.creditstabsheet.caption
+msgctxt "taboutform.creditstabsheet.caption"
+msgid "Credits"
 msgstr ""
 
-#: taboutform.label2.caption
-msgid "Fugue icons set"
-msgstr ""
-
-#: taboutform.label3.caption
-msgid "Yusuke Kamiyamane"
-msgstr ""
-
-#: taboutform.label4.caption
-msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
-
-#: taboutform.label5.caption
-msgid "RichMemo"
-msgstr ""
-
-#: taboutform.label6.caption
+#: taboutform.editorauthorlabel.caption
+msgctxt "taboutform.editorauthorlabel.caption"
 msgid "Dmitry Boyarintsev"
 msgstr ""
 
-#: taboutform.label7.caption
+#: taboutform.editorlicenselabel.caption
+msgctxt "taboutform.editorlicenselabel.caption"
 msgid "LGPL v2"
 msgstr ""
 
-#: taboutform.tabsheet1.caption
-msgctxt "taboutform.tabsheet1.caption"
-msgid "MyLittleEditor"
+#: taboutform.editornamelabel.caption
+msgctxt "taboutform.editornamelabel.caption"
+msgid "RichMemo"
 msgstr ""
 
-#: taboutform.tabsheet2.caption
-msgid "Credits"
+#: taboutform.githubbitbtn.caption
+msgctxt "taboutform.githubbitbtn.caption"
+msgid "See on GitHub"
+msgstr ""
+
+#: taboutform.iconsetauthorlabel.caption
+msgctxt "taboutform.iconsetauthorlabel.caption"
+msgid "Yusuke Kamiyamane"
+msgstr ""
+
+#: taboutform.iconsetlicenselabel.caption
+msgctxt "taboutform.iconsetlicenselabel.caption"
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: taboutform.iconsetnamelabel.caption
+msgctxt "taboutform.iconsetnamelabel.caption"
+msgid "Fugue icons set"
+msgstr ""
+
+#: taboutform.mletabsheet.caption
+msgctxt "taboutform.mletabsheet.caption"
+msgid "MyLittleEditor"
 msgstr ""
 
 #: taboutform.versionlabel.caption
@@ -102,6 +131,7 @@ msgid "&New"
 msgstr ""
 
 #: tmainform.newtoolbutton.caption
+msgctxt "tmainform.newtoolbutton.caption"
 msgid "New"
 msgstr ""
 

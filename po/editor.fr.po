@@ -11,52 +11,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.9\n"
 
-#: taboutform.bitbtn1.caption
-msgid "See on GitHub"
-msgstr "Voir sur GitHub"
+#: main.statusloaded
+msgid "Loaded"
+msgstr "Chargé"
+
+#: main.statusmodified
+msgid "Modified"
+msgstr "Modifié"
+
+#: main.statusnew
+msgctxt "main.statusnew"
+msgid "New"
+msgstr "Nouveau"
+
+#: main.statussaved
+msgid "Saved"
+msgstr "Sauvegardé"
+
+#: main.untitleddocument
+msgid "Untitled file"
+msgstr "Document sans titre"
+
+#: taboutform.applicationnamelabel.caption
+msgctxt "taboutform.applicationnamelabel.caption"
+msgid "MyLittleEditor"
+msgstr ""
 
 #: taboutform.caption
 msgctxt "taboutform.caption"
 msgid "About"
 msgstr "À propos"
 
-#: taboutform.label1.caption
-msgctxt "taboutform.label1.caption"
-msgid "MyLittleEditor"
-msgstr ""
+#: taboutform.creditstabsheet.caption
+msgctxt "taboutform.creditstabsheet.caption"
+msgid "Credits"
+msgstr "Crédits"
 
-#: taboutform.label2.caption
-msgid "Fugue icons set"
-msgstr "Jeu d’icônes Fugue"
-
-#: taboutform.label3.caption
-msgid "Yusuke Kamiyamane"
-msgstr ""
-
-#: taboutform.label4.caption
-msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
-
-#: taboutform.label5.caption
-msgid "RichMemo"
-msgstr ""
-
-#: taboutform.label6.caption
+#: taboutform.editorauthorlabel.caption
+msgctxt "taboutform.editorauthorlabel.caption"
 msgid "Dmitry Boyarintsev"
 msgstr ""
 
-#: taboutform.label7.caption
+#: taboutform.editorlicenselabel.caption
+msgctxt "taboutform.editorlicenselabel.caption"
 msgid "LGPL v2"
 msgstr ""
 
-#: taboutform.tabsheet1.caption
-msgctxt "taboutform.tabsheet1.caption"
-msgid "MyLittleEditor"
+#: taboutform.editornamelabel.caption
+msgctxt "taboutform.editornamelabel.caption"
+msgid "RichMemo"
 msgstr ""
 
-#: taboutform.tabsheet2.caption
-msgid "Credits"
-msgstr "Crédits"
+#: taboutform.githubbitbtn.caption
+msgctxt "taboutform.githubbitbtn.caption"
+msgid "See on GitHub"
+msgstr "Voir sur GitHub"
+
+#: taboutform.iconsetauthorlabel.caption
+msgctxt "taboutform.iconsetauthorlabel.caption"
+msgid "Yusuke Kamiyamane"
+msgstr ""
+
+#: taboutform.iconsetlicenselabel.caption
+msgctxt "taboutform.iconsetlicenselabel.caption"
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: taboutform.iconsetnamelabel.caption
+msgctxt "taboutform.iconsetnamelabel.caption"
+msgid "Fugue icons set"
+msgstr "Jeu d’icônes Fugue"
+
+#: taboutform.mletabsheet.caption
+msgctxt "taboutform.mletabsheet.caption"
+msgid "MyLittleEditor"
+msgstr ""
 
 #: taboutform.versionlabel.caption
 msgid "version"
@@ -112,6 +141,7 @@ msgid "&New"
 msgstr "&Nouveau"
 
 #: tmainform.newtoolbutton.caption
+msgctxt "tmainform.newtoolbutton.caption"
 msgid "New"
 msgstr "Nouveau"
 

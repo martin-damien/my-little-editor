@@ -11,16 +11,16 @@ object AboutForm: TAboutForm
   ShowInTaskBar = stNever
   LCLVersion = '4.8.0.0'
   OnCreate = FormCreate
-  object PageControl1: TPageControl
+  object AboutPageControl: TPageControl
     Left = 0
     Height = 442
     Top = 0
     Width = 326
-    ActivePage = TabSheet1
+    ActivePage = MleTabSheet
     Align = alClient
     TabIndex = 0
     TabOrder = 0
-    object TabSheet1: TTabSheet
+    object MleTabSheet: TTabSheet
       Caption = 'MyLittleEditor'
       ClientHeight = 411
       ClientWidth = 322
@@ -3061,7 +3061,7 @@ object AboutForm: TAboutForm
           44AE426082
         }
       end
-      object Label1: TLabel
+      object ApplicationNameLabel: TLabel
         Left = 8
         Height = 37
         Top = 296
@@ -3082,7 +3082,7 @@ object AboutForm: TAboutForm
         AutoSize = False
         Caption = 'version'
       end
-      object BitBtn1: TBitBtn
+      object GitHubBitBtn: TBitBtn
         Left = 184
         Height = 30
         Top = 376
@@ -3091,14 +3091,14 @@ object AboutForm: TAboutForm
         Images = MainForm.IconImageList
         ImageIndex = 6
         TabOrder = 0
-        OnClick = BitBtn1Click
+        OnClick = GitHubBitBtnClick
       end
     end
-    object TabSheet2: TTabSheet
+    object CreditsTabSheet: TTabSheet
       Caption = 'Credits'
       ClientHeight = 411
       ClientWidth = 322
-      object Label2: TLabel
+      object IconSetNameLabel: TLabel
         Left = 16
         Height = 17
         Top = 16
@@ -3107,21 +3107,21 @@ object AboutForm: TAboutForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label3: TLabel
+      object IconSetAuthorLabel: TLabel
         Left = 16
         Height = 17
         Top = 40
         Width = 115
         Caption = 'Yusuke Kamiyamane'
       end
-      object Label4: TLabel
+      object IconSetLicenseLabel: TLabel
         Left = 16
         Height = 17
         Top = 56
         Width = 234
         Caption = 'Creative Commons Attribution 3.0 License'
       end
-      object BitBtn2: TBitBtn
+      object IconSetWebBitBtn: TBitBtn
         Left = 272
         Height = 30
         Top = 16
@@ -3129,9 +3129,9 @@ object AboutForm: TAboutForm
         Images = MainForm.IconImageList
         ImageIndex = 7
         TabOrder = 0
-        OnClick = BitBtn2Click
+        OnClick = IconSetWebBitBtnClick
       end
-      object Label5: TLabel
+      object EditorNameLabel: TLabel
         Left = 16
         Height = 17
         Top = 96
@@ -3140,21 +3140,21 @@ object AboutForm: TAboutForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label6: TLabel
+      object EditorAuthorLabel: TLabel
         Left = 16
         Height = 17
         Top = 120
         Width = 107
         Caption = 'Dmitry Boyarintsev'
       end
-      object Label7: TLabel
+      object EditorLicenseLabel: TLabel
         Left = 16
         Height = 17
         Top = 136
         Width = 44
         Caption = 'LGPL v2'
       end
-      object BitBtn3: TBitBtn
+      object EditorWebBitBtn: TBitBtn
         Left = 272
         Height = 30
         Top = 96
@@ -3162,7 +3162,7 @@ object AboutForm: TAboutForm
         Images = MainForm.IconImageList
         ImageIndex = 7
         TabOrder = 1
-        OnClick = BitBtn3Click
+        OnClick = EditorWebBitBtnClick
       end
     end
   end
