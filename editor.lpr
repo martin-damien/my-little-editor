@@ -1,3 +1,9 @@
+{
+  Copyright (c) 2026 MARTIN Damien
+
+  SPDX-License-Identifier: MIT
+}
+
 program editor;
 
 {$mode objfpc}{$H+}

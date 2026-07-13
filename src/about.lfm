@@ -10,6 +10,7 @@ object AboutForm: TAboutForm
   Position = poMainFormCenter
   ShowInTaskBar = stNever
   LCLVersion = '4.8.0.0'
+  OnCreate = FormCreate
   object Image1: TImage
     Left = 8
     Height = 298
@@ -3052,10 +3053,31 @@ object AboutForm: TAboutForm
     Height = 37
     Top = 312
     Width = 306
+    Alignment = taCenter
     AutoSize = False
     Caption = 'MyLittleEditor'
     Font.Height = 27
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
+  end
+  object VersionLabel: TLabel
+    Left = 0
+    Height = 17
+    Top = 352
+    Width = 314
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'version'
+  end
+  object BitBtn1: TBitBtn
+    Left = 184
+    Height = 30
+    Top = 392
+    Width = 131
+    Caption = 'See on GitHub'
+    Images = MainForm.IconImageList
+    ImageIndex = 13
+    TabOrder = 0
+    OnClick = BitBtn1Click
   end
 end
