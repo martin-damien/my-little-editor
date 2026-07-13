@@ -23,7 +23,7 @@ begin
   {$POP}
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TForm1, Form1);
+    Application.CreateForm(TAboutForm, AboutForm);
   Application.Run;
 end.
 

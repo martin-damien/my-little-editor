@@ -6,7 +6,8 @@ interface
 
 uses
     Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-    ComCtrls, Buttons, Menus, RichMemo, SynHighlighterPHP, PrintersDlgs, LCLType;
+    ComCtrls, Buttons, Menus, RichMemo, SynHighlighterPHP, PrintersDlgs,
+    LCLType, ActnList, about;
 
 type
 
@@ -19,6 +20,9 @@ type
         IconImageList: TImageList;
         MainMenu: TMainMenu;
         FileMenuItem: TMenuItem;
+        HelpMenuItem: TMenuItem;
+        EditMenuItem: TMenuItem;
+        BoldMenuItem: TMenuItem;
         AboutMenuItem: TMenuItem;
         SaveMenuItem: TMenuItem;
         OpenMenuItem: TMenuItem;
@@ -36,6 +40,8 @@ type
         ItalicToolButton: TToolButton;
         UnderlineToolButton: TToolButton;
 
+        procedure AboutMenuItemClick(Sender: TObject);
+        procedure Action1Execute(Sender: TObject);
         procedure FormCreate(Sender: TObject);
 
         { Generic EventHandler to be plugged with toolbar, menu, editor, … }
@@ -48,9 +54,9 @@ type
         procedure OnRichMemoClicked(Sender: TObject);
         procedure OnRichMemoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
-        procedure BoldToolButtonClick(Sender: TObject);
-        procedure ItalicToolButtonClick(Sender: TObject);
-        procedure UnderlineToolButtonClick(Sender: TObject);
+        procedure ApplyBold(Sender: TObject);
+        procedure ApplyItalic(Sender: TObject);
+        procedure ApplyUnderline(Sender: TObject);
 
         private
 
@@ -82,6 +88,23 @@ begin
     editorStatus := esNew;
     UpdateWindowCaption;
     UpdateStatusBar;
+end;
+
+procedure TMainForm.Action1Execute(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.AboutMenuItemClick(Sender: TObject);
+var
+    aboutForm: TAboutForm;
+begin
+    aboutForm := TAboutForm.Create(self);
+    try
+        aboutForm.ShowModal;
+    finally
+        aboutForm.Free;
+    end;
 end;
 
 { Events Handlers ------------------------------------------------------------ }
@@ -131,17 +154,17 @@ begin
     end;
 end;
 
-procedure TMainForm.BoldToolButtonClick(Sender: TObject);
+procedure TMainForm.ApplyBold(Sender: TObject);
 begin
     SwitchSelectionTextAttribute(fsBold);
 end;
 
-procedure TMainForm.ItalicToolButtonClick(Sender: TObject);
+procedure TMainForm.ApplyItalic(Sender: TObject);
 begin
     SwitchSelectionTextAttribute(fsItalic);
 end;
 
-procedure TMainForm.UnderlineToolButtonClick(Sender: TObject);
+procedure TMainForm.ApplyUnderline(Sender: TObject);
 begin
     SwitchSelectionTextAttribute(fsUnderline);
 end;
@@ -181,7 +204,7 @@ end;
 
 procedure TMainForm.UpdateWindowCaption;
 begin
-    MainForm.Caption := 'Editor - ' + fileName;
+    MainForm.Caption := 'MyLittleEditor - ' + fileName;
 end;
 
 procedure TMainForm.UpdateStatusBar;

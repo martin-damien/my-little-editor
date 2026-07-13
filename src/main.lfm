@@ -80,7 +80,7 @@ object MainForm: TMainForm
       Caption = 'BoldToolButton'
       ImageIndex = 10
       Style = tbsCheck
-      OnClick = BoldToolButtonClick
+      OnClick = ApplyBold
     end
     object ItalicToolButton: TToolButton
       Left = 129
@@ -88,7 +88,7 @@ object MainForm: TMainForm
       Caption = 'ItalicToolButton'
       ImageIndex = 4
       Style = tbsCheck
-      OnClick = ItalicToolButtonClick
+      OnClick = ApplyItalic
     end
     object UnderlineToolButton: TToolButton
       Left = 153
@@ -96,7 +96,7 @@ object MainForm: TMainForm
       Caption = 'UnderlineToolButton'
       ImageIndex = 12
       Style = tbsCheck
-      OnClick = UnderlineToolButtonClick
+      OnClick = ApplyUnderline
     end
   end
   object StatusBar: TStatusBar
@@ -112,25 +112,45 @@ object MainForm: TMainForm
     SimplePanel = False
   end
   object MainMenu: TMainMenu
+    Images = IconImageList
     Left = 440
     Top = 56
     object FileMenuItem: TMenuItem
       Caption = '&File'
       object NewMenuItem: TMenuItem
         Caption = '&New'
+        ImageIndex = 1
+        ShortCut = 16462
         OnClick = DoNew
       end
       object OpenMenuItem: TMenuItem
         Caption = '&Open'
+        ImageIndex = 2
+        ShortCut = 16463
         OnClick = DoOpen
       end
       object SaveMenuItem: TMenuItem
         Caption = '&Save'
+        ImageIndex = 3
+        ShortCut = 16467
         OnClick = DoSave
       end
     end
-    object AboutMenuItem: TMenuItem
+    object EditMenuItem: TMenuItem
+      Caption = '&Edit'
+      object BoldMenuItem: TMenuItem
+        Caption = 'Bold'
+        ImageIndex = 10
+        ShortCut = 16450
+        OnClick = ApplyBold
+      end
+    end
+    object HelpMenuItem: TMenuItem
       Caption = '?'
+      object AboutMenuItem: TMenuItem
+        Caption = 'About'
+        OnClick = AboutMenuItemClick
+      end
     end
   end
   object OpenDialog: TOpenDialog

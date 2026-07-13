@@ -5,10 +5,15 @@ unit about;
 interface
 
 uses
-    Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+    Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
-    TForm1 = class(TForm)
+
+    { TAboutForm }
+
+    TAboutForm = class(TForm)
+        Image1: TImage;
+        Label1: TLabel;
     private
 
     public
@@ -16,7 +21,7 @@ type
     end;
 
 var
-    Form1: TForm1;
+    AboutForm: TAboutForm;
 
 implementation
 
