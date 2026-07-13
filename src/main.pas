@@ -30,6 +30,8 @@ type
         EditMenuItem: TMenuItem;
         BoldMenuItem: TMenuItem;
         AboutMenuItem: TMenuItem;
+        ItalicMenuItem: TMenuItem;
+        MenuItem1: TMenuItem;
         SaveMenuItem: TMenuItem;
         OpenMenuItem: TMenuItem;
         NewMenuItem: TMenuItem;
@@ -40,14 +42,12 @@ type
         NewToolButton: TToolButton;
         OpenToolButton: TToolButton;
         SaveToolButton: TToolButton;
-        PrintToolButton: TToolButton;
         BoldToolButton: TToolButton;
         SeparatorToolButton1: TToolButton;
         ItalicToolButton: TToolButton;
         UnderlineToolButton: TToolButton;
 
         procedure AboutMenuItemClick(Sender: TObject);
-        procedure Action1Execute(Sender: TObject);
         procedure FormCreate(Sender: TObject);
 
         { Generic EventHandler to be plugged with toolbar, menu, editor, … }
@@ -94,11 +94,6 @@ begin
     editorStatus := esNew;
     UpdateWindowCaption;
     UpdateStatusBar;
-end;
-
-procedure TMainForm.Action1Execute(Sender: TObject);
-begin
-
 end;
 
 procedure TMainForm.AboutMenuItemClick(Sender: TObject);

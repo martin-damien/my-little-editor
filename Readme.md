@@ -36,6 +36,17 @@ RichMemo is released under the [LGPLv2](https://www.gnu.org/licenses/old-license
 
 The icon files have been generated on [https://convertico.com/icon-maker/](https://convertico.com/icon-maker/).
 
+### Icons
+
+Fugue Icons
+
+(C) 2013 Yusuke Kamiyamane. All rights reserved.
+
+These icons are licensed under a Creative Commons Attribution 3.0 License.
+<http://creativecommons.org/licenses/by/3.0/>
+
+https://p.yusukekamiyamane.com/
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
