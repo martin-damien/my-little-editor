@@ -6,6 +6,10 @@
 
 A simple RTF editor for Desktop.
 
+<p align="center">
+    <img src="assets/screenshot.png" alt="Logo">
+</p>
+
 ## Why?
 
 I wanted a small, fast application to edit text with a minimum of formatting.
