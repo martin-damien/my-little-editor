@@ -20,6 +20,7 @@ object MainForm: TMainForm
     OnClick = OnRichMemoClicked
     OnKeyDown = OnRichMemoKeyDown
     OnMouseDown = OnRichMemoClicked
+    OnMouseUp = EditorRichMemoMouseUp
     ScrollBars = ssAutoBoth
     TabOrder = 0
     ZoomFactor = 1
@@ -92,6 +93,57 @@ object MainForm: TMainForm
       Style = tbsCheck
       OnClick = ApplyUnderline
     end
+    object ToolButton1: TToolButton
+      Left = 153
+      Height = 24
+      Top = 0
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object FontPanel: TPanel
+      Left = 161
+      Height = 24
+      Top = 0
+      Width = 170
+      BevelOuter = bvNone
+      ClientHeight = 24
+      ClientWidth = 170
+      TabOrder = 0
+      object FontComboBox: TComboBox
+        Left = 0
+        Height = 24
+        Top = 0
+        Width = 100
+        Align = alLeft
+        ItemHeight = 0
+        TabOrder = 0
+        Text = 'FontComboBox'
+        OnChange = ApplyFont
+      end
+      object FontSizeComboBox: TComboBox
+        Left = 102
+        Height = 24
+        Top = 0
+        Width = 68
+        Align = alRight
+        ItemHeight = 0
+        ItemIndex = 1
+        Items.Strings = (
+          '8'
+          '10'
+          '12'
+          '14'
+          '16'
+          '18'
+          '26'
+          '36'
+          '72'
+        )
+        TabOrder = 1
+        Text = '10'
+        OnChange = ApplyFontSize
+      end
+    end
   end
   object StatusBar: TStatusBar
     Left = 0
@@ -100,8 +152,18 @@ object MainForm: TMainForm
     Width = 724
     Panels = <    
       item
-        Text = 'Changed'
+        Alignment = taCenter
+        Text = '0'
         Width = 50
+      end    
+      item
+        Alignment = taCenter
+        Text = '0'
+        Width = 50
+      end    
+      item
+        Text = 'Changed'
+        Width = 600
       end>
     SimplePanel = False
   end

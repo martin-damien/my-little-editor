@@ -22,6 +22,8 @@ type
     { TMainForm }
 
     TMainForm = class(TForm)
+        FontComboBox: TComboBox;
+        FontSizeComboBox: TComboBox;
         EditorRichMemo: TRichMemo;
         IconImageList: TImageList;
         MainMenu: TMainMenu;
@@ -32,6 +34,7 @@ type
         AboutMenuItem: TMenuItem;
         ItalicMenuItem: TMenuItem;
         MenuItem1: TMenuItem;
+        FontPanel: TPanel;
         SaveMenuItem: TMenuItem;
         OpenMenuItem: TMenuItem;
         NewMenuItem: TMenuItem;
@@ -45,9 +48,12 @@ type
         BoldToolButton: TToolButton;
         SeparatorToolButton1: TToolButton;
         ItalicToolButton: TToolButton;
+        ToolButton1: TToolButton;
         UnderlineToolButton: TToolButton;
 
         procedure AboutMenuItemClick(Sender: TObject);
+        procedure EditorRichMemoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+
         procedure FormCreate(Sender: TObject);
 
         { Generic EventHandler to be plugged with toolbar, menu, editor, … }
@@ -63,9 +69,12 @@ type
         procedure ApplyBold(Sender: TObject);
         procedure ApplyItalic(Sender: TObject);
         procedure ApplyUnderline(Sender: TObject);
+        procedure ApplyFont(Sender: TObject);
+        procedure ApplyFontSize(Sender: TObject);
 
         private
 
+            procedure UpdateSelection;
             procedure SwitchSelectionTextAttribute(attribute: TFontStyle);
             procedure UpdateWindowCaption;
             procedure UpdateStatusBar;
@@ -81,6 +90,7 @@ resourcestring
     StatusSaved = 'Saved';
 
 var
+    selectionStart, selectionLength: Integer;
     editorStatus: TEditorStatus;
     fileName: String;
     rtfFile: TFileStream;
@@ -97,6 +107,8 @@ implementation
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
+    FontComboBox.Items.Assign(Screen.Fonts);
+    FontComboBox.ItemIndex := 0;
     fileName := UntitledDocument;
     editorStatus := esNew;
     UpdateWindowCaption;
@@ -113,6 +125,11 @@ begin
     finally
         aboutForm.Free;
     end;
+end;
+
+procedure TMainForm.EditorRichMemoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+    UpdateSelection;
 end;
 
 { Events Handlers ------------------------------------------------------------ }
@@ -177,6 +194,20 @@ begin
     SwitchSelectionTextAttribute(fsUnderline);
 end;
 
+procedure TMainForm.ApplyFont(Sender: TObject);
+begin
+    selectionFontFormat.Name := FontComboBox.Text;
+    EditorRichMemo.SetTextAttributes(selectionStart, selectionLength, selectionFontFormat);
+    EditorRichMemo.SetFocus;
+end;
+
+procedure TMainForm.ApplyFontSize(Sender: TObject);
+begin
+    selectionFontFormat.Size := StrToInt(FontSizeComboBox.Text);
+    EditorRichMemo.SetTextAttributes(selectionStart, selectionLength, selectionFontFormat);
+    EditorRichMemo.SetFocus;
+end;
+
 procedure TMainForm.OnRichMemoChanged(Sender: TObject);
 begin
     editorStatus := esModified;
@@ -185,6 +216,8 @@ end;
 
 procedure TMainForm.OnRichMemoClicked(Sender: TObject);
 begin
+    selectionStart := EditorRichMemo.SelStart;
+    selectionLength := EditorRichMemo.SelLength;
     EditorRichMemo.GetTextAttributes(EditorRichMemo.SelStart, selectionFontFormat);
     UpdateToolBar;
 end;
@@ -199,6 +232,13 @@ begin
 end;
 
 { Private members ------------------------------------------------------------ }
+
+procedure TMainForm.UpdateSelection;
+begin
+    selectionStart := EditorRichMemo.SelStart;
+    selectionLength := EditorRichMemo.SelLength;
+    UpdateStatusBar;
+end;
 
 procedure TMainForm.SwitchSelectionTextAttribute(attribute: TFontStyle);
 begin
@@ -217,14 +257,17 @@ end;
 
 procedure TMainForm.UpdateStatusBar;
 begin
+    StatusBar.Panels[0].Text := IntToStr(selectionStart);
+    StatusBar.Panels[1].Text := IntToStr(selectionLength);
+
     if editorStatus = esNew then
-        StatusBar.Panels[0].Text := StatusNew
+        StatusBar.Panels[2].Text := StatusNew
     else if editorStatus = esLoaded then
-        StatusBar.Panels[0].Text := StatusLoaded
+        StatusBar.Panels[2].Text := StatusLoaded
     else if editorStatus = esModified then
-        StatusBar.Panels[0].Text := StatusModified
+        StatusBar.Panels[2].Text := StatusModified
     else
-        StatusBar.Panels[0].Text := StatusSaved;
+        StatusBar.Panels[2].Text := StatusSaved;
 end;
 
 procedure TMainForm.UpdateToolBar;
@@ -232,6 +275,7 @@ begin
     BoldToolButton.Down := fsBold in selectionFontFormat.Style;
     ItalicToolButton.Down := fsItalic in selectionFontFormat.Style;
     UnderlineToolButton.Down := fsUnderline in selectionFontFormat.Style;
+    FontComboBox.Text := selectionFontFormat.Name;
 end;
 
 end.
