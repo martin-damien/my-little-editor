@@ -106,6 +106,16 @@ msgstr ""
 msgid "&File"
 msgstr ""
 
+#: tmainform.fontcombobox.text
+msgctxt "tmainform.fontcombobox.text"
+msgid "FontComboBox"
+msgstr ""
+
+#: tmainform.fontsizecombobox.text
+msgctxt "tmainform.fontsizecombobox.text"
+msgid "10"
+msgstr ""
+
 #: tmainform.helpmenuitem.caption
 msgid "?"
 msgstr ""
@@ -156,7 +166,22 @@ msgid "SeparatorToolButton1"
 msgstr ""
 
 #: tmainform.statusbar.panels[0].text
+msgctxt "tmainform.statusbar.panels[0].text"
+msgid "0"
+msgstr ""
+
+#: tmainform.statusbar.panels[1].text
+msgctxt "tmainform.statusbar.panels[1].text"
+msgid "0"
+msgstr ""
+
+#: tmainform.statusbar.panels[2].text
+msgctxt "tmainform.statusbar.panels[2].text"
 msgid "Changed"
+msgstr ""
+
+#: tmainform.toolbutton1.caption
+msgid "ToolButton1"
 msgstr ""
 
 #: tmainform.underlinetoolbutton.caption
